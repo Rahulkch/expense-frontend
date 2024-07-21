@@ -1,0 +1,22 @@
+{
+    "_id": {
+      "$oid": "6698ddddd1d99022c2fe675e"
+    },
+    "name": "Ankit",
+    "email": "abc@gmail.com",
+    "total":1500,
+    "password": "$2b$10$fwoHY9posK0sHORX6mkbt.aNn/Xa.lLwnbmmwL9DFGJH9DyIIuE0.",
+    "label": [
+      " trip ",
+      " resturant ",
+      " resturant ",
+      " bootle "
+    ],
+    "value": [
+      56,
+      89,
+      89,
+      99
+    ],
+    "__v": 0
+  }
