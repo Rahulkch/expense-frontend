@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { Doughnut } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
-import x from './data.json'
+
 import { useNavigate } from 'react-router-dom';
 import Spin from './Spin';
+import base from '../base.js'
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -33,7 +34,7 @@ const getgraphdata=()=>{
   }
 
 // fetchin x from api
-  fetch("http://localhost:9000/route/find",{
+  fetch(`${base}/route/find`,{
     method:"put",
     headers: {
         "Content-Type": "application/json"
@@ -71,7 +72,7 @@ const handeltotal= (e)=>{
   total=Number(total);
   console.log("total going to be",total)
  let id=localStorage.getItem("id");
- fetch("http://localhost:9000/route/total",{
+ fetch(`${base}/route/total`,{
   method:"put",
   headers: {
       "Content-Type": "application/json"

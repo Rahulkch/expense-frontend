@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import List from './List';
-
+import base from "../base.js"
 const Nav = ({ref,d}) => {
   let [trans,settrans]=useState("");
   let [num,setnum]=useState("");
@@ -12,7 +12,7 @@ const Nav = ({ref,d}) => {
     num=Number(num);
     console.log("amount",num);
     let id=localStorage.getItem("id");
-   fetch("http://localhost:9000/route/chartdata", {
+   fetch(`${base}/route/chartdata`, {
     method: "put",
     headers: {
       "Content-Type": "application/json"

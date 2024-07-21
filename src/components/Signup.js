@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link, useNavigate} from 'react-router-dom';
-
+import base from "../base.js"
 const Signup = () => {
   const n=useNavigate();
     const[name,setname]=useState("");
@@ -11,7 +11,7 @@ const Signup = () => {
         console.log("email",email);
         console.log("password",password)
         console.log("name",name);
-        fetch("http://localhost:9000/route/details",{
+        fetch(`${base}/route/details`,{
             method:"post",
             headers: {
                 "Content-Type": "application/json"

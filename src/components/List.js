@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { RiDeleteBinFill } from "react-icons/ri";
-
+import base from "../base.js"
 const List = () => {
   const [value, setValue] = useState([]);
   const [label, setLabel] = useState([]);
 
   const getData = () => {
     const id = localStorage.getItem("id");
-    fetch("http://localhost:9000/route/find", {
+    fetch(`${base}/route/find`, {
       method: "put",
       headers: {
         "Content-Type": "application/json"
@@ -27,7 +27,7 @@ const List = () => {
   // Delete function
   const handleDel = (index) => {
     const id = localStorage.getItem("id");
-    fetch("http://localhost:9000/route/del", {
+    fetch(`${base}/route/del`, {
       method: "put",
       headers: {
         "Content-Type": "application/json"
@@ -44,7 +44,7 @@ const List = () => {
           setLabel(newLabels);
           setValue(newValues);
           window.location.reload();
-          
+
   
         }
       });
